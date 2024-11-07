@@ -2,7 +2,10 @@ import { CommonModule } from '@angular/common';
 import { Component, inject, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
-import { ImageCroppedEvent, ImageCropperModule } from 'ngx-image-cropper';
+import { ImageCroppedEvent, ImageCropperComponent,  } from 'ngx-image-cropper';
+
+import { ImageCropperModule } from '../../image-cropper/image-cropper.module';
+// import { ImageCropperModule } from 'ngx-image-cropper';
 
 export type CropperDialogData = {
   image: File;
@@ -18,7 +21,7 @@ export type CropperDialogResult = {
 @Component({
   selector: 'app-cropper-dialog',
   standalone: true,
-  imports: [CommonModule, MatButtonModule, MatDialogModule, ImageCropperModule],
+  imports: [CommonModule, MatButtonModule, MatDialogModule, ImageCropperModule, ImageCropperComponent],
   templateUrl: './cropper-dialog.component.html',
   styleUrl: './cropper-dialog.component.scss'
 })

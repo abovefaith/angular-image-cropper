@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Component, computed, effect, EventEmitter, inject, Input, NgZone, Output, signal} from '@angular/core';
+import { Component, computed, effect, EventEmitter, inject, Input, NgZone, Output, signal } from '@angular/core';
 import { filter } from 'rxjs';
 import { CropperDialogComponent, CropperDialogResult } from '../cropper-dialog/cropper-dialog.component';
-import {ProgressSpinnerMode, MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { ProgressSpinnerMode, MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
+import { Storage, getDownloadURL, ref, uploadBytes, } from '@angular/fire/storage';
 
 
 @Component({
@@ -77,6 +78,7 @@ export class ImageControlComponent {
 
   storage = inject(Storage);
   zone = inject(NgZone);
+
 
   async uploadImage(blob: Blob) {
     this.uploading.set(true);
