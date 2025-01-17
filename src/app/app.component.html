@@ -1,22 +1,23 @@
 <mat-toolbar color="primary"> Angular Image Cropper </mat-toolbar>
+<div class="form-container">
+  <mat-form-field>
+    <input
+      ngModel
+      (ngModelChange)="height.set($event)"
+      matInput
+      placeholder="Enter image height..."
+    />
+  </mat-form-field>
 
-<mat-form-field>
-  <input
-    ngModel
-    (ngModelChange)="height.set($event)"
-    matInput
-    placeholder="Enter image height..."
-  />
-</mat-form-field>
-
-<mat-form-field>
-  <input
-    ngModel
-    matInput
-    (ngModelChange)="width.set($event)"
-    placeholder="Enter image width..."
-  />
-</mat-form-field>
+  <mat-form-field>
+    <input
+      ngModel
+      matInput
+      (ngModelChange)="width.set($event)"
+      placeholder="Enter image width..."
+    />
+  </mat-form-field>
+</div>
 
 <div class="container">
   <app-image-control
